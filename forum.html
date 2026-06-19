@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER/GRID | MATRIX APPAREL</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #050505;
+            color: #FFEE00;
+            overflow-x: hidden;
+        }
+
+        /* --- GLOW EFFECTS (Amarelo + Vermelho Neon) --- */
+        .neon-text {
+            text-shadow: 0 0 6px #FFEE00, 0 0 12px #FFEE00, 0 0 20px #FF004D;
+        }
+
+        .neon-border {
+            border: 1px solid #FFEE00;
+            box-shadow: 0 0 10px rgba(255, 238, 0, 0.4), 0 0 20px rgba(255, 0, 77, 0.3);
+        }
+
+        /* --- HEADER --- */
+        header {
+            border-bottom: 1px solid #FFEE00;
+            padding: 20px;
+            background: rgba(5, 5, 5, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #FFEE00;
+        }
+
+        .search-bar {
+            background: transparent;
+            border: 1px solid #FFEE00;
+            padding: 8px 15px;
+            color: #FFEE00;
+            width: 300px;
+            outline: none;
+        }
+
+        .search-bar:focus {
+            border-color: #FF004D;
+            box-shadow: 0 0 12px #FF004D;
+        }
+
+        /* --- MENU DE NAVEGAÇÃO --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #FFEE00;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #FF004D;
+            text-shadow: 0 0 12px #FF004D;
+            text-decoration: underline;
+        }
+
+        /* --- BANNER PRINCIPAL --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(255,238,0,0.08) 0%, rgba(0,0,0,0) 100%);
+            border-bottom: 1px solid rgba(255, 238, 0, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 16px;
+            letter-spacing: 3px;
+            color: #FF004D;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero a {
+            color: #FFEE00;
+            font-size: 14px;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .hero a:hover {
+            color: #FF004D;
+        }
+
+        /* --- GRADE DE PRODUTOS --- */
+        .products-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #FFEE00;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 238, 0, 0.5);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background-color: #111;
+            border: 1px solid rgba(255, 238, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .product-price {
+            font-size: 15px;
+            color: #FF004D;
+            margin-bottom: 8px;
+        }
+
+        .stars {
+            color: #FFEE00;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            background: transparent;
+            border: 1px solid #FFEE00;
+            color: #FFEE00;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-add:hover {
+            background: #FFEE00;
+            color: #000000;
+            box-shadow: 0 0 15px #FFEE00;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo neon-text">CYBER/GRID | MATRIX</div>
+            <input type="text" class="search-bar" placeholder="NED TRENCH COAT ⌕">
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Shop All</a>
+            <a href="#">Mens</a>
+            <a href="#">Womens</a>
+            <a href="#">Accessories</a>
+            <a href="#">Grid_Plus</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>EQUIP YOURSELF FOR THE SIMULATION.</h2>
+        <h1 class="neon-text">THE ARCHITECT COLLECTION</h1>
+        <a href="#">SHOP NOW</a>
+    </section>
+
+    <main class="products-container">
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://via.placeholder.com/300x400/000000/FFEE00?text=Codex+Trench');"></div>
+            <div>
+                <div class="product-title">Matrix Codex Trench</div>
+                <div class="product-price">R$ 849,00</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <button class="btn-add">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://via.placeholder.com/300x400/000000/FFEE00?text=Unit+Jacket');"></div>
+            <div>
+                <div class="product-title">Cybernetic Unit Jacket</div>
+                <div class="product-price">R$ 679,00</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <button class="btn-add">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://via.placeholder.com/300x400/000000/FFEE00?text=Slicer+Boots');"></div>
+            <div>
+                <div class="product-title">Neo Slicer Boots</div>
+                <div class="product-price">R$ 515,00</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <button class="btn-add">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://via.placeholder.com/300x400/000000/FFEE00?text=Grid+Vest');"></div>
+            <div>
+                <div class="product-title">Grid Runner Vest</div>
+                <div class="product-price">R$ 399,00</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <button class="btn-add">Adicionar ao Carrinho</button>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 30px; color: #666; font-size: 14px; border-top: 1px solid #222;">
+        <p>&copy; 2026 Marcus Rothschard • Memento Mori</p>
+    </footer>
+</body>
+</html>
