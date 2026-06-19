@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Rothschard — 履歴書</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+        body {
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        canvas#matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.25;
+        }
+
+        .curriculo-container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00ff41, #94f0ab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .location {
+            color: #00cc33;
+            font-size: 1.2rem;
+        }
+
+        .section {
+            margin-bottom: 4.5rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: #00ff41;
+            margin-bottom: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .item {
+            margin-bottom: 2.2rem;
+        }
+
+        .item-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #0ce634;
+        }
+
+        .item-meta {
+            color: #00aa22;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .item-desc {
+            color: #81f081;
+            font-size: 1.05rem;
+        }
+
+        ul.skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.8rem;
+            list-style: none;
+        }
+
+        ul.skills li {
+            background: #05220a;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00ff41;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            color: #00ff41;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas do Matrix -->
+    <canvas id="matrix"></canvas>
+
+    <a href="../social.html" class="back-button">
+        <i class="fa-solid fa-arrow-left"></i> 戻る
+    </a>
+
+    <div class="curriculo-container">
+        <header>
+            <h1 class="name">Marcus Rothschard</h1>
+            <p class="location">カンポ・グランデ, MS • ブラジル</p>
+            
+            <div class="contact-info" style="margin-top: 2rem; font-size: 1.1rem; color: #00cc33;">
+                <a href="mailto:contato@marcusrothschard.com.br" style="color:#00ff41;">contato@marcusrothschard.com.br</a> • 
+                <a href="https://wa.me/qr/3BZK3ES7EES2B1" target="_blank" style="color:#00ff41;">+55 (67) 98221-8092</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2 class="section-title">自己紹介</h2>
+            <p class="item-desc" style="font-size: 1.15rem;">
+                フルスタック開発者。インパクトのあるデジタル体験を作ることに情熱を注いでいます。<br>
+                クリーンなコード、洗練されたデザイン、そして創造的な解決策を組み合わせ、現実の問題を解決します。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">技術スキル</h2>
+            <ul class="skills">
+                <li><strong>言語:</strong> Python, JavaScript, TypeScript, HTML/CSS, Java, Swift</li>
+                <li><strong>フレームワーク:</strong> Django, React, Node.js, Express</li>
+                <li><strong>データベース:</strong> MySQL, SQLite, PostgreSQL</li>
+                <li><strong>ツール:</strong> Git, Docker, VS Code, Vercel, Figma</li>
+                <li><strong>その他:</strong> REST API, Scrum, 単体テスト, UI/UX</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">注目のプロジェクト</h2>
+            <div class="item">
+                <div class="item-title">タスク管理システム</div>
+                <div class="item-meta">2025 • フルスタック</div>
+                <p class="item-desc">
+                    認証機能、CRUD操作、リアルタイムダッシュボード、データベース連携を備えた完全なウェブアプリケーション。
+                </p>
+            </div>
+
+            <div class="item">
+                <div class="item-title">天気予報API</div>
+                <div class="item-meta">2024 • バックエンド</div>
+                <p class="item-desc">
+                    Node.jsで構築された堅牢なREST API。外部サービスを消費し、整形されたレスポンスを返します。
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">学歴 & 職歴</h2>
+            <div class="item">
+                <div class="item-title">フルスタック開発者</div>
+                <div class="item-meta">フリーランス • 2023 — 現在</div>
+                <p class="item-desc">
+                    クライアント向けにウェブサイト、ウェブシステム、自動化ツールを開発。
+                </p>
+            </div>
+        </div>
+
+        <footer style="text-align: center; margin-top: 6rem; color: #00aa22; font-size: 0.95rem;">
+            © 2026 Marcus Rothschard • IN Matrix
+        </footer>
+    </div>
+
+    <script src="../javascript/doc.js"></script>
+    <script>
+        // === MATRIX RAIN EFFECT ===
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const fontSize = 14;
+        let columns = canvas.width / fontSize;
+        let drops = [];
+
+        for (let x = 0; x < columns; x++) {
+            drops[x] = Math.floor(Math.random() * 100);
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff41';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+    </script>
+</body>
+</html>
